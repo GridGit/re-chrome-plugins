@@ -1,0 +1,26 @@
+{
+    "name": "chrome plugin",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "chrome plugin desc",
+    "icons": {
+        "64": "images/online.png"
+    },
+    "browser_action": {        
+        "default_icon": "images/online.png",
+        "default_title": "chrome plugin title",
+        "default_popup": "html/index.html"
+    },
+    "content_scripts": [{
+        "js": ["script/index.js"],
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "run_at": "document_start"
+    }],
+    "permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
+}
